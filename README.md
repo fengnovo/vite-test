@@ -1,5 +1,12 @@
 # Vue 3 + Vite
-试试vite打包
+试试vite打包Lottie动画,使用pnpm
+
+## Recommended Setup
+```
+npm install -g pnpm
+pnpm install
+npm run dev
+```
 
 ## Recommended IDE Setup
 
