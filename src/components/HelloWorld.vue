@@ -1,11 +1,41 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted } from "vue";
+import lottie from "lottie-web";
+import a1 from "../public/loading.json";
+import a2 from "../public/data.json";
+import a3 from "../public/404.json";
 
 defineProps({
-  msg: String
-})
+  msg: String,
+});
 
-const count = ref(0)
+const count = ref(0);
+onMounted(() => {
+  const idFlow = document.getElementById("id-flow");
+  const id404 = document.getElementById("id404");
+  const idLoading = document.getElementById("id-loading");
+  lottie.loadAnimation({
+    container: idLoading,
+    renderer: "svg",
+    loop: true,
+    autoplay: true,
+    animationData: a1,
+  });
+  lottie.loadAnimation({
+    container: idFlow,
+    renderer: "svg",
+    loop: true,
+    autoplay: true,
+    animationData: a2,
+  });
+  lottie.loadAnimation({
+    container: id404,
+    renderer: "svg",
+    loop: true,
+    autoplay: true,
+    animationData: a3,
+  });
+});
 </script>
 
 <template>
@@ -30,7 +60,9 @@ const count = ref(0)
     <a href="https://github.com/johnsoncodehk/volar" target="_blank">Volar</a>
     in your IDE for a better DX
   </p>
-  <p class="read-the-docs">Click on the Vite and Vue logos to learn more</p>
+  <div id="id-loading" style="width: 200px; height: 100%"></div>
+  <div id="id-flow" style="width: 300px; height: 100%"></div>
+  <div id="id404" style="width: 200px; height: 100%"></div>
 </template>
 
 <style scoped>
