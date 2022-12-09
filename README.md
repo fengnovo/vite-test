@@ -1,5 +1,5 @@
 # Vue 3 + Vite
-试试
+试试vite打包
 
 ## Recommended IDE Setup
 
